@@ -36,7 +36,7 @@ function App() {
           ),
         },
         {
-          path: "home",
+          path: "snapshop",
           element: (
             <ProtectedRoutes>
               <Home />
