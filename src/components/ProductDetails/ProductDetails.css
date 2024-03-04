@@ -1,0 +1,14 @@
+.product-details-btns button {
+  border-radius: 0 !important;
+}
+
+.product-details-btns button:hover {
+  background-color: #e7ab3c !important;
+  color: white;
+  border: none;
+}
+.product-details-btns button:last-child:hover {
+  background-color: #e7ab3c !important;
+  color: white;
+  border: 1px solid #e7ab3c !important;
+}

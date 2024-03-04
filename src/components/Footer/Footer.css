@@ -1,0 +1,29 @@
+footer {
+  background-color: #252525;
+  color: white;
+}
+footer button {
+  background-color: white !important;
+  color: #252525 !important;
+}
+footer button:hover {
+  background-color: #e7ab3c !important;
+}
+footer span {
+  color: #cccccc !important;
+}
+
+footer ul li {
+  margin: 10px;
+}
+
+footer ul li a {
+  color: white;
+}
+footer .footer-icons div:hover {
+  background-color: #e7ab3c;
+  cursor: pointer;
+}
+.footer-bottom {
+  border-top: #333333 solid 1px;
+}
