@@ -44,6 +44,14 @@ function App() {
           ),
         },
         {
+          path: "home",
+          element: (
+            <ProtectedRoutes>
+              <Home />
+            </ProtectedRoutes>
+          ),
+        },
+        {
           path: "products",
           element: (
             <ProtectedRoutes>
