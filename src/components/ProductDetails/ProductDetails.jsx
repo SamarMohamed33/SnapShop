@@ -5,9 +5,11 @@ import Loading from '../Loading/Loading';
 // import { storeContext } from '../../context/StoreContext';
 import "./ProductDetails.css"
 import { cartContext } from '../../context/CartContext';
+import { wishlistContext } from '../../context/wishlistContext';
 
 function ProductDetails() {
-    let{counter,setCounter}=useContext(cartContext);
+    let{addToCart,setNumOfCartItems}=useContext(cartContext);
+    let {addToWishList,setNumOfWishlistItems}= useContext(wishlistContext)
     let  product=useParams()
     let [productDetails, setProductDetails] =useState({});
     let [loading,setLoading] = useState(true)
@@ -17,6 +19,24 @@ function ProductDetails() {
         let {data} = await  axios.get(`https://ecommerce.routemisr.com/api/v1/products/${product.id}`);
         setProductDetails(data.data)
         setLoading(false)
+    }
+    async function addItemToCart(productId)
+    {
+        let response = await addToCart(productId)
+        if (response.status ==="success")
+        {
+            setNumOfCartItems(response.numOfCartItems)
+            console.log(response)
+        }
+    }
+    async function addItemToWishlist(productId)
+    {
+        let response = await addToWishList(productId)
+        if (response.status ==="success")
+        {
+            setNumOfWishlistItems(response.data.length)
+            console.log(response)
+        }
     }
     useEffect(() => {
         getProduct()
@@ -54,8 +74,8 @@ function ProductDetails() {
                         </div> 
                         <p className='display-6 fw-bold my-5'>{productDetails.price} EGP</p>
                         <div className='d-flex my-3 product-details-btns'>
-                            <button onClick={()=>setCounter(counter++)} className='btn w-100' style={{ backgroundColor: "#252525",color:"white"}}>Add to Cart</button>
-                            <button className='btn ms-2 p-0' style={{border:"1px solid rgb(200,200,200)"}}><i class="fa-solid fa-heart p-3" ></i></button>
+                            <button onClick={()=>addItemToCart(productDetails._id)} className='btn w-100' style={{ backgroundColor: "#252525",color:"white"}}>Add to Cart</button>
+                            <button onClick={()=>addItemToWishlist(productDetails._id)} className='btn ms-2 p-0' style={{border:"1px solid rgb(200,200,200)"}}><i class="fa-solid fa-heart p-3" ></i></button>
                         </div>
                     
                     </div>

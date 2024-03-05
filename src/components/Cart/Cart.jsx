@@ -81,13 +81,13 @@ function Cart() {
                     <div className='row py-3'>
                         <div className='col-lg-4 update-box'>
                             <div className='d-flex justify-content-between'>
-                                <Link to="/products" className='btn btn-dark rounded-0'>CONTINUE SHOPPING</Link>
-                                <button className='btn btn-dark rounded-0'>UPDATE CART</button>
+                                <Link to="/products" className='btn main-btn rounded-0'>CONTINUE SHOPPING</Link>
+                                <button onClick={()=>window.scrollTo({top:0,behavior:"smooth"})} className='btn main-btn rounded-0'>UPDATE CART</button>
                             </div>
                             <p className='mt-5'>DISCOUNT CODES</p>
                             <div className='d-flex justify-content-between'>
                                 <input type="text" placeholder='Enter your code here...'  className='form-control rounded-0 shadow-none'/>
-                                <button className='btn rounded-0'>APPLY</button>
+                                <button className='btn main-btn rounded-0'>APPLY</button>
                             </div>
                         </div>
                         <div className='col-lg-4 offset-lg-4 checkout-box'>
@@ -103,7 +103,7 @@ function Cart() {
                                 <div>Total</div>
                                 <div>{cartItems?.data.totalCartPrice+60} EGP</div>
                             </div>
-                            <Link to={`/address/${cartItems.data._id}`} className='btn btn-dark rounded-0 w-100'>PROCEED TO CHECHOUT</Link>
+                            <Link to={`/address/${cartItems.data._id}`} className='btn main-btn rounded-0 w-100'>PROCEED TO CHECHOUT</Link>
                         </div>
                     </div>
                 </div>

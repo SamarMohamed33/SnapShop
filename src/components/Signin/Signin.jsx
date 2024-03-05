@@ -44,7 +44,7 @@ function Signin() {
             <div className='container my-5'>
                 <form className='m-auto my-5 px-3 px-lg-5 py-5 p-lg-5 text-white shadow-lg' onSubmit={login.handleSubmit}>
                     <h1 >Login Now:</h1>
-                    <div className='mb-4 mt-4'>
+                    <div className='my-4'>
                         <div className='position-relative overflow-hidden' style={{height:"30px"}}>
                             <label htmlFor="email" style={{position:"absolute",left:"7px",top:"0",transition:"1s ease all"}}>Email:</label>
                         </div>

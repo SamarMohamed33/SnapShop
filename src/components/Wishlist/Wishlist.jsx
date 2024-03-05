@@ -68,13 +68,13 @@ function Wishlist() {
                                             <p className='my-1'>Brand: {item.brand.name}</p>
                                             <p className='my-1'>Category: {item.category.name}</p>
                                         </div>
-                                        <button className='btn btn-dark rounded-0' style={{width:"fit-content"}} onClick={()=>addProductToCart(item._id)}>Add to Cart</button>
+                                        <button className='btn main-btn rounded-0' style={{width:"fit-content"}} onClick={()=>addProductToCart(item._id)}>Add to Cart</button>
                                     </div>
                                 </div>
                                 <div className="col-md-3">
                                     <div className='d-flex flex-column justify-content-between h-100 align-items-end'>
                                         <span>{item.price} EGP</span>
-                                        <button className='btn btn-dark rounded-0' onClick={()=>removeItemFromWishlist(item._id)} style={{width:"fit-content"}}><i class="fa-regular fa-trash-can"></i></button>
+                                        <button className='btn main-btn rounded-0' onClick={()=>removeItemFromWishlist(item._id)} style={{width:"fit-content"}}><i class="fa-regular fa-trash-can"></i></button>
                                     </div>
                                 </div>
                             </div>
