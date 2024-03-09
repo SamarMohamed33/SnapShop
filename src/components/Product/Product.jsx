@@ -1,12 +1,11 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
-// import { storeContext } from '../../context/StoreContext';
 import "./product.css"
 import { cartContext } from '../../context/CartContext';
 import { toast } from "react-toastify";
 import { wishlistContext } from '../../context/wishlistContext';
 
-function Product({item,isInWishlist}) {
+function Product({item,isInWishlist,setQuickView,setProductForQuickView}) {
     console.log(isInWishlist)
     let product=item
     let {setNumOfCartItems,addToCart}=useContext(cartContext)
@@ -43,7 +42,10 @@ function Product({item,isInWishlist}) {
                     <Link to={`/product-details/${product._id}`}>
                         <img className="w-100" src={product.imageCover} alt="" />
                     </Link>
-                    <button className="quick-btn btn text-white rounded-0">Quick View</button>
+                    <button className="quick-btn btn text-white rounded-0" onClick={()=>{
+                        setQuickView(true)
+                        setProductForQuickView(product)
+                    }}>Quick View</button>
                     <div className='product-btns d-flex'>
                         <button disabled={btnLoading?true:false} onClick={()=>addProductToCart(product._id)} className='btn w-100 me-2'>{btnLoading?"Loading...":"Add to Cart"}</button>
                         <button onClick={()=>addProductToWishlist(product._id)} className='btn'><i class="fa-solid fa-heart ms-1" style={{color:isInWishlist?"#e7ab3c":""}}></i></button>

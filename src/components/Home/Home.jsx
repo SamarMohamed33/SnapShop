@@ -4,8 +4,8 @@ import Categories from '../Categories/Categories';
 function Home() {
     return (
         <>
-           <section  className="hero-section h-100 mt-5 position-relative">
-                <div  className="hero-section-overlay">
+           <section  className="hero-section h-100 mt-5 position-relative text-center" >
+                <div  className="hero-section-overlay p-2">
                     <h2>Welcome to SnapShop!</h2>
                     <p>Discover Your Style, Explore Endless Possibilities</p>
                 </div>

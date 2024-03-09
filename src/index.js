@@ -10,13 +10,13 @@ import "slick-carousel/slick/slick-theme.css";
 import "react-toastify/dist/ReactToastify.css";
 import "./index.css";
 import { QueryClient, QueryClientProvider } from "react-query";
-import { ReactQueryDevtools } from "react-query/devtools";
+// import { ReactQueryDevtools } from "react-query/devtools";
 const query = new QueryClient();
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <QueryClientProvider client={query}>
     <App />
-    <ReactQueryDevtools />
+    {/* <ReactQueryDevtools /> */}
   </QueryClientProvider>
 );
 

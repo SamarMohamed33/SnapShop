@@ -3,6 +3,7 @@ body #root {
   min-height: 100vh;
   padding: 0;
   margin: 0;
+  box-sizing: border-box;
 }
 nav h1 {
   font-family: "Lobster Two", sans-serif;
@@ -42,8 +43,8 @@ nav .nav-icons {
   background-image: url(assets/images/banner-1.jpg.webp);
   height: 70vh !important;
   background-repeat: no-repeat;
-  background-position: center;
-  background-size: 100% 100%;
+  background-position: left top;
+  background-size: cover;
 }
 .hero-section .hero-section-overlay {
   background-color: rgba(0, 0, 0, 0.7);
@@ -63,22 +64,19 @@ nav .nav-icons {
 .main-header {
   position: relative;
 }
-.main-header::after {
-  content: "";
-  position: absolute;
-  width: 40%;
-  height: 1px;
-  background-color: #cccccc;
-  top: 50%;
-  left: 0;
-}
+.main-header::after,
 .main-header::before {
   content: "";
   position: absolute;
-  width: 40%;
+  width: 38%;
   height: 1px;
   background-color: #cccccc;
   top: 50%;
+}
+.main-header::after {
+  left: 0;
+}
+.main-header::before {
   right: 0;
 }
 /***************** Forms ***********/
@@ -121,12 +119,56 @@ form button:hover {
 .main-btn:hover {
   background-color: #e7ab3c !important;
 }
-
+.product-quickview {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  bottom: 0px;
+  right: 0px;
+  background-color: rgba(0, 0, 0, 0.6);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 188888 !important;
+}
+.product-quickview .container {
+  background-color: white;
+  width: 65%;
+  position: relative;
+}
+.product-quickview h2 {
+  color: #252525;
+}
+.product-quickview .price {
+  color: #252525;
+}
+.product-quickview button:first-of-type {
+  background-color: #252525 !important;
+  color: white !important;
+  border: 2px solid #252525 !important;
+}
+.product-quickview button:first-of-type:hover {
+  background-color: transparent !important;
+  color: #252525 !important;
+}
+.product-quickview button:nth-of-type(2) {
+  background-color: transparent;
+  border: 2px solid #252525;
+}
+.product-quickview .fa-star:not(.text-muted) {
+  color: #e7ab3c !important;
+}
 @media (max-width: 992px) {
   .navbar-nav.ul-icons {
     flex-direction: row;
   }
   form {
     width: 90% !important;
+  }
+  .main-header::after,
+  .main-header::before {
+    width: 28%;
   }
 }
